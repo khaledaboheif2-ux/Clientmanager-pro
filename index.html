@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+<title>Client Manager Pro</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KPHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSI5NiIgZmlsbD0iIzFBMTcxMiIvPgo8dGV4dCB4PSIyNTYiIHk9IjM0MCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsICdUaW1lcyBOZXcgUm9tYW4nLCBzZXJpZiIgZm9udC1zaXplPSIyODAiIGZvbnQtd2VpZ2h0PSI2MDAiIGZpbGw9IiNGQUY4RjQiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkM8L3RleHQ+Cjwvc3ZnPg=="/>
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KPHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSI5NiIgZmlsbD0iIzFBMTcxMiIvPgo8dGV4dCB4PSIyNTYiIHk9IjM0MCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsICdUaW1lcyBOZXcgUm9tYW4nLCBzZXJpZiIgZm9udC1zaXplPSIyODAiIGZvbnQtd2VpZ2h0PSI2MDAiIGZpbGw9IiNGQUY4RjQiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkM8L3RleHQ+Cjwvc3ZnPg=="/>
+<link rel="manifest" href="data:application/json;base64,eyJuYW1lIjogIkNsaWVudCBNYW5hZ2VyIFBybyIsICJzaG9ydF9uYW1lIjogIkNsaWVudCBNYW5hZ2VyIiwgInN0YXJ0X3VybCI6ICIuIiwgImRpc3BsYXkiOiAic3RhbmRhbG9uZSIsICJiYWNrZ3JvdW5kX2NvbG9yIjogIiNGQUY4RjQiLCAidGhlbWVfY29sb3IiOiAiIzFBMTcxMiIsICJpY29ucyI6IFt7InNyYyI6ICJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUI0Yld4dWN6MGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TUM5emRtY2lJSFpwWlhkQ2IzZzlJakFnTUNBMU1USWdOVEV5SWo0S1BISmxZM1FnZDJsa2RHZzlJalV4TWlJZ2FHVnBaMmgwUFNJMU1USWlJSEo0UFNJNU5pSWdabWxzYkQwaUl6RkJNVGN4TWlJdlBnbzhkR1Y0ZENCNFBTSXlOVFlpSUhrOUlqTTBNQ0lnWm05dWRDMW1ZVzFwYkhrOUlrZGxiM0puYVdFc0lDZFVhVzFsY3lCT1pYY2dVbTl0WVc0bkxDQnpaWEpwWmlJZ1ptOXVkQzF6YVhwbFBTSXlPREFpSUdadmJuUXRkMlZwWjJoMFBTSTJNREFpSUdacGJHdzlJaU5HUVVZNFJqUWlJSFJsZUhRdFlXNWphRzl5UFNKdGFXUmtiR1VpUGtNOEwzUmxlSFErQ2p3dmMzWm5QZz09IiwgInNpemVzIjogIjUxMng1MTIiLCAidHlwZSI6ICJpbWFnZS9zdmcreG1sIiwgInB1cnBvc2UiOiAiYW55IG1hc2thYmxlIn1dfQ=="/>
+<meta name="theme-color" content="#1A1712"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-title" content="Client Manager"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.2/babel.min.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body,#root{height:100%;width:100%}
+body{font-family:'Inter',sans-serif;overflow:hidden}
+::-webkit-scrollbar{width:0}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes cardIn{from{opacity:0;transform:translateY(18px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes overlayIn{from{opacity:0}to{opacity:1}}
+@keyframes sheetUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+@keyframes expandDown{from{opacity:0;max-height:0;transform:translateY(-6px)}to{opacity:1;max-height:260px;transform:translateY(0)}}
+@keyframes popDigit{0%{opacity:0;transform:translateY(10px)}100%{opacity:1;transform:translateY(0)}}
+@keyframes checkPop{0%{transform:scale(0)}60%{transform:scale(1.25)}100%{transform:scale(1)}}
+
+.page-in{animation:fadeIn .32s cubic-bezier(.22,1,.36,1) both}
+.card-in{animation:cardIn .36s cubic-bezier(.22,1,.36,1) both}
+.ov-in{animation:overlayIn .22s ease both}
+.sheet-in{animation:sheetUp .38s cubic-bezier(.16,1,.3,1) both}
+.expand-in{animation:expandDown .28s cubic-bezier(.22,1,.36,1) both;overflow:hidden}
+.num-in{animation:popDigit .4s cubic-bezier(.22,1,.36,1) both}
+.check-in{animation:checkPop .35s cubic-bezier(.34,1.56,.64,1) both}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const{useState,useEffect,useRef}=React;
+
+/* ── translations ── */
+const T={
+en:{
+  sub:"Lead Management",
+  total:"Total Clients",eg:"Egyptian",intl:"International",
+  contacted:"Contacted",notContacted:"Not Contacted",secondCall:"Second Call",stats:"Statistics",
+  addClient:"Add Client",addMultiple:"Add Multiple",deleteAll:"Delete All Clients",campaign:"WhatsApp Campaign",
+  deleteAllConfirm:"Delete ALL clients? (Second Call list stays safe)",
+  call:"Call",wa:"WhatsApp",sc:"2nd Call",called:"Called",
+  noteHint:"Write a note for this client…",save:"Save",cancel:"Cancel",
+  nameLabel:"Full Name",phoneLabel:"Phone Number",natLabel:"Nationality",countryLabel:"Country",countryHint:"e.g. UAE, Saudi Arabia…",
+  egOpt:"Egyptian",intlOpt:"International",
+  pasteNames:"Names — one per line",pastePhones:"Phones — one per line",
+  importBtn:"Import",importHint:"Egyptian & international numbers are detected automatically from the phone code.",
+  callsToday:"Today",callsYest:"Yesterday",callsWeek:"This Week",callsMonth:"This Month",prevMonths:"Previous Months",
+  weeklyBreakdown:"Weeks This Month",week:"Week",calendarTitle:"Calendar",dayDetail:"Day Detail",
+  noClients:"No clients yet",noClientsSub:"Tap + Add Client to begin",
+  noSecond:"Nothing here yet",noSecondSub:"Add clients to follow up later",
+  search:"Search clients…",
+  addSecond:"Add to Second Call",settings:"Settings",lang:"Language",theme:"Appearance",
+  light:"Light",dark:"Dark",close:"Done",
+  blankErr:"Remove blank lines between entries.",
+  mismatchErr:"Names & phones count don't match.",
+  delClientConfirm:"Remove this client?",
+  tab_home:"Home",tab_clients:"Clients",tab_second:"2nd Call",tab_stats:"Stats",
+  filterAll:"All",
+  actions:"Management",
+  audience:"Audience",audAll:"All Clients",audEg:"Egyptian Only",audIntl:"International Only",
+  message:"Message",messageHint:"Type your campaign message…",
+  imageOpt:"Image (optional)",addImage:"Attach Image",removeImage:"Remove",
+  delay:"Delay Between Messages",seconds:"Seconds",minutes:"Minutes",
+  startCampaign:"Start Campaign",
+  campaignQueue:"Queue",sendNext:"Open Next Chat",
+  campaignProgress:"of",noAudience:"No clients in this group yet.",
+  campaignDone:"Campaign finished! 🎉",
+  campaignIntro:"This opens WhatsApp chats one by one with your message ready — you just tap Send each time.",
+  recipient:"Recipient",
+  finishCampaign:"Finish",
+},
+ar:{
+  sub:"إدارة العملاء",
+  total:"إجمالي العملاء",eg:"مصريون",intl:"دوليون",
+  contacted:"تم التواصل",notContacted:"لم يُتواصل",secondCall:"المكالمة الثانية",stats:"الإحصائيات",
+  addClient:"إضافة عميل",addMultiple:"إضافة متعددين",deleteAll:"حذف جميع العملاء",campaign:"حملة واتساب",
+  deleteAllConfirm:"حذف جميع العملاء؟ (قائمة المكالمة الثانية آمنة)",
+  call:"اتصال",wa:"واتساب",sc:"مكالمة 2",called:"تم الاتصال",
+  noteHint:"اكتب ملاحظة لهذا العميل…",save:"حفظ",cancel:"إلغاء",
+  nameLabel:"الاسم الكامل",phoneLabel:"رقم الهاتف",natLabel:"الجنسية",countryLabel:"الدولة",countryHint:"مثال: الإمارات، السعودية…",
+  egOpt:"مصري",intlOpt:"دولي",
+  pasteNames:"الأسماء — سطر لكل اسم",pastePhones:"الأرقام — سطر لكل رقم",
+  importBtn:"استيراد",importHint:"الجنسية والدولة بتُحدد تلقائياً من كود الهاتف.",
+  callsToday:"اليوم",callsYest:"أمس",callsWeek:"هذا الأسبوع",callsMonth:"هذا الشهر",prevMonths:"الأشهر السابقة",
+  weeklyBreakdown:"أسابيع هذا الشهر",week:"أسبوع",calendarTitle:"التقويم",dayDetail:"تفاصيل اليوم",
+  noClients:"لا يوجد عملاء بعد",noClientsSub:"اضغط + إضافة عميل للبدء",
+  noSecond:"لا يوجد شيء هنا",noSecondSub:"أضف عملاء للمتابعة لاحقاً",
+  search:"بحث عن عميل…",
+  addSecond:"إضافة لمكالمة 2",settings:"الإعدادات",lang:"اللغة",theme:"المظهر",
+  light:"فاتح",dark:"داكن",close:"تم",
+  blankErr:"أزل الأسطر الفارغة بين الإدخالات.",
+  mismatchErr:"عدد الأسماء لا يتطابق مع الأرقام.",
+  delClientConfirm:"حذف هذا العميل؟",
+  tab_home:"الرئيسية",tab_clients:"العملاء",tab_second:"مكالمة 2",tab_stats:"إحصائيات",
+  filterAll:"الكل",
+  actions:"الإدارة",
+  audience:"الفئة المستهدفة",audAll:"كل العملاء",audEg:"المصريين فقط",audIntl:"الدوليين فقط",
+  message:"الرسالة",messageHint:"اكتب نص رسالة الحملة…",
+  imageOpt:"صورة (اختياري)",addImage:"إضافة صورة",removeImage:"إزالة",
+  delay:"الفاصل بين الرسائل",seconds:"ثواني",minutes:"دقائق",
+  startCampaign:"بدء الحملة",
+  campaignQueue:"القائمة",sendNext:"فتح المحادثة التالية",
+  campaignProgress:"من",noAudience:"لا يوجد عملاء في هذه الفئة بعد.",
+  campaignDone:"انتهت الحملة! 🎉",
+  campaignIntro:"ده هيفتح محادثات واتساب واحدة واحدة بالرسالة جاهزة — انت بس تضغط Send كل مرة.",
+  recipient:"المستلم",
+  finishCampaign:"إنهاء",
+}};
+
+/* ── helpers ── */
+const todayKey=()=>new Date().toISOString().slice(0,10);
+const yesterdayKey=()=>{const d=new Date();d.setDate(d.getDate()-1);return d.toISOString().slice(0,10)};
+const monthKey=()=>new Date().toISOString().slice(0,7);
+const weekStartKey=()=>{const d=new Date();d.setDate(d.getDate()-d.getDay());return d.toISOString().slice(0,10)};
+
+const WEEKDAY_SHORT={en:["S","M","T","W","T","F","S"],ar:["ح","ن","ث","ر","خ","ج","س"]};
+const WEEKDAY_FULL={en:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+ar:["الأحد","الإثنين","الثلاثاء","الأربعاء","الخميس","الجمعة","السبت"]};
+const MONTH_NAMES={en:["January","February","March","April","May","June","July","August","September","October","November","December"],
+ar:["يناير","فبراير","مارس","أبريل","مايو","يونيو","يوليو","أغسطس","سبتمبر","أكتوبر","نوفمبر","ديسمبر"]};
+
+/* build calendar grid for a given year/month: returns array of weeks, each an array of {day,dateKey}|null */
+function buildMonthGrid(year,month){
+  const firstDay=new Date(year,month,1).getDay();
+  const daysInMonth=new Date(year,month+1,0).getDate();
+  const cells=[];
+  for(let i=0;i<firstDay;i++)cells.push(null);
+  for(let d=1;d<=daysInMonth;d++){
+    const dateKey=`${year}-${String(month+1).padStart(2,"0")}-${String(d).padStart(2,"0")}`;
+    cells.push({day:d,dateKey});
+  }
+  while(cells.length%7!==0)cells.push(null);
+  const weeks=[];
+  for(let i=0;i<cells.length;i+=7)weeks.push(cells.slice(i,i+7));
+  return weeks;
+}
+const uid=()=>Math.random().toString(36).slice(2)+Date.now().toString(36);
+const ls=(k,d)=>{try{const v=localStorage.getItem(k);return v===null?d:JSON.parse(v)}catch{return d}};
+const lsSet=(k,v)=>localStorage.setItem(k,JSON.stringify(v));
+
+/* ── country code → country name (sorted longest-prefix-first) ── */
+const COUNTRY_CODES=[
+  ["971","UAE"],["966","Saudi Arabia"],["965","Kuwait"],["974","Qatar"],["973","Bahrain"],
+  ["968","Oman"],["962","Jordan"],["961","Lebanon"],["963","Syria"],["964","Iraq"],
+  ["970","Palestine"],["967","Yemen"],["20","Egypt"],["212","Morocco"],["213","Algeria"],
+  ["216","Tunisia"],["218","Libya"],["249","Sudan"],["252","Somalia"],["253","Djibouti"],
+  ["222","Mauritania"],["269","Comoros"],
+  ["1","USA/Canada"],["44","UK"],["49","Germany"],["33","France"],["39","Italy"],["34","Spain"],
+  ["351","Portugal"],["31","Netherlands"],["32","Belgium"],["41","Switzerland"],["43","Austria"],
+  ["46","Sweden"],["47","Norway"],["45","Denmark"],["358","Finland"],["353","Ireland"],
+  ["48","Poland"],["420","Czech Republic"],["36","Hungary"],["30","Greece"],["90","Turkey"],
+  ["7","Russia"],["380","Ukraine"],["375","Belarus"],["381","Serbia"],["385","Croatia"],
+  ["86","China"],["81","Japan"],["82","South Korea"],["91","India"],["92","Pakistan"],
+  ["880","Bangladesh"],["94","Sri Lanka"],["95","Myanmar"],["60","Malaysia"],["65","Singapore"],
+  ["66","Thailand"],["62","Indonesia"],["63","Philippines"],["84","Vietnam"],["852","Hong Kong"],
+  ["886","Taiwan"],["61","Australia"],["64","New Zealand"],
+  ["27","South Africa"],["234","Nigeria"],["254","Kenya"],["233","Ghana"],["251","Ethiopia"],
+  ["255","Tanzania"],["256","Uganda"],
+  ["55","Brazil"],["52","Mexico"],["54","Argentina"],["57","Colombia"],["56","Chile"],
+  ["51","Peru"],["58","Venezuela"],["593","Ecuador"],
+  ["98","Iran"],["972","Israel"],["93","Afghanistan"],
+].sort((a,b)=>b[0].length-a[0].length);
+
+function detectCountry(phone){
+  let digits=(phone||"").replace(/[^\d+]/g,"");
+  digits=digits.replace(/^00/,"+");
+  if(!digits.startsWith("+")){
+    if(digits.startsWith("0"))return"Egypt";
+    digits="+"+digits;
+  }
+  const noPlus=digits.slice(1);
+  for(const[code,name] of COUNTRY_CODES){
+    if(noPlus.startsWith(code))return name;
+  }
+  return"";
+}
+
+/* ── SVG Icons (thin, editorial) ── */
+const Icon={
+  home:({s=20,c})=><svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9.5l9-7 9 7V20a1 1 0 01-1 1h-5v-7H9v7H4a1 1 0 01-1-1z"/></svg>,
+  users:({s=20,c})=><svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="7" r="3.2"/><path d="M2.5 21v-1.8A4.7 4.7 0 017.2 14.5h3.6a4.7 4.7 0 014.7 4.7V21"/><path d="M16.5 4.2a3.2 3.2 0 010 6"/><path d="M19 14.7a4.6 4.6 0 013.5 4.5V21"/></svg>,
+  phone:({s=20,c})=><svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16.5v2.7a1.8 1.8 0 01-2 1.8 17.8 17.8 0 01-7.8-2.8 17.5 17.5 0 01-5.4-5.4A17.8 17.8 0 013 5a1.8 1.8 0 011.8-1.8h2.7a1.8 1.8 0 011.8 1.5c.12.86.32 1.7.6 2.5a1.8 1.8 0 01-.4 1.9l-1.2 1.2a14.4 14.4 0 005.4 5.4l1.2-1.2a1.8 1.8 0 011.9-.4c.8.28 1.64.48 2.5.6A1.8 1.8 0 0121 16.5z"/></svg>,
+  bar:({s=20,c})=><svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 20V11"/><path d="M12 20V4"/><path d="M20 20v-7"/></svg>,
+  plus:({s=18,c})=><svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth="1.8" strokeLinecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>,
+  search:({s=16,c})=><svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth="1.6" strokeLinecap="round"><circle cx="11" cy="11" r="7.5"/><line x1="21" y1="21" x2="16.2" y2="16.2"/></svg>,
+  gear:({s=19,c})=><svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/></svg>,
+  trash:({s=15,c})=><svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4h6v2"/></svg>,
+  wa:({s=15,c})=><svg width={s} height={s} viewBox="0 0 24 24" fill={c}><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>,
+  repeat:({s=14,c})=><svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 014-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>,
+  x:({s=16,c})=><svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth="1.8" strokeLinecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>,
+  layers:({s=17,c})=><svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>,
+  chevron:({s=16,c,style})=><svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={style}><polyline points="6 9 12 15 18 9"/></svg>,
+  arrowRight:({s=14,c})=><svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>,
+  check:({s=14,c})=><svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>,
+  megaphone:({s=17,c})=><svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 11l18-7v16L3 13v-2z"/><path d="M7 13v5a2 2 0 002 2h1v-6"/></svg>,
+  image:({s=16,c})=><svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>,
+};
+
+const FRAUNCES={fontFamily:"'Fraunces',serif"};
+
+/* ══════════════════════ MAIN APP ══════════════════════ */
+function App(){
+  const[lang,setLang]=useState(()=>ls("cmp_lang","en"));
+  const[theme,setTheme]=useState(()=>ls("cmp_theme","light"));
+  const[clients,setClients]=useState(()=>ls("cmp_clients",[]));
+  const[secondCall,setSecondCall]=useState(()=>ls("cmp_second",[]));
+  const[callLog,setCallLog]=useState(()=>ls("cmp_calllog",{}));
+  const[monthHistory,setMonthHistory]=useState(()=>ls("cmp_history",{}));
+  const[tab,setTab]=useState("home");
+  const[search,setSearch]=useState("");
+  const[filter,setFilter]=useState("all");
+  const[modal,setModal]=useState(null);
+  const[modalClosing,setModalClosing]=useState(false);
+  const[commentData,setCommentData]=useState({id:null,text:""});
+  const[singleForm,setSingleForm]=useState({name:"",phone:"",nat:"eg",country:""});
+  const[mNames,setMNamesRaw]=useState("");
+  const[mPhones,setMPhonesRaw]=useState("");
+  function stripBlankLines(value){
+    return value.split("\n").filter(line=>line.trim()!=="").join("\n");
+  }
+  function setMNames(value){setMNamesRaw(stripBlankLines(value));}
+  function setMPhones(value){setMPhonesRaw(stripBlankLines(value));}
+  const[mErr,setMErr]=useState("");
+  const[sForm,setSForm]=useState({name:"",phone:"",note:""});
+
+  // campaign state
+  const[campAudience,setCampAudience]=useState("all");
+  const[campMsg,setCampMsg]=useState("");
+  const[campImg,setCampImg]=useState(null);
+  const[campDelay,setCampDelay]=useState(30);
+  const[campDelayUnit,setCampDelayUnit]=useState("seconds");
+  const[campQueue,setCampQueue]=useState(null); // {list:[], idx:0}
+  const now0=new Date();
+  const[calYear,setCalYear]=useState(now0.getFullYear());
+  const[calMonth,setCalMonth]=useState(now0.getMonth());
+  const[selectedDay,setSelectedDay]=useState(todayKey());
+
+  const t=T[lang];
+  const dark=theme==="dark";
+  const rtl=lang==="ar";
+
+  useEffect(()=>lsSet("cmp_lang",lang),[lang]);
+  useEffect(()=>lsSet("cmp_theme",theme),[theme]);
+  useEffect(()=>lsSet("cmp_clients",clients),[clients]);
+  useEffect(()=>lsSet("cmp_second",secondCall),[secondCall]);
+  useEffect(()=>lsSet("cmp_calllog",callLog),[callLog]);
+  useEffect(()=>lsSet("cmp_history",monthHistory),[monthHistory]);
+
+  useEffect(()=>{
+    const cur=monthKey(),last=localStorage.getItem("cmp_lastmonth");
+    if(last&&last!==cur){
+      const tot=Object.values(callLog).reduce((a,b)=>a+b,0);
+      setMonthHistory(h=>{const n={...h,[last]:tot};lsSet("cmp_history",n);return n});
+      setCallLog({});
+    }
+    localStorage.setItem("cmp_lastmonth",cur);
+  },[]);
+
+  function closeModal(){
+    setModalClosing(true);
+    setTimeout(()=>{setModal(null);setModalClosing(false);},220);
+  }
+
+  const today=todayKey();
+  const callsToday=callLog[today]||0;
+  const callsYest=callLog[yesterdayKey()]||0;
+  const callsWeek=Object.entries(callLog).filter(([d])=>d>=weekStartKey()).reduce((a,[,v])=>a+v,0);
+  const callsMonth=Object.values(callLog).reduce((a,b)=>a+b,0);
+  const monthGrid=buildMonthGrid(calYear,calMonth);
+  const isCurrentCalMonth=calYear===now0.getFullYear()&&calMonth===now0.getMonth();
+  function calPrev(){
+    if(calMonth===0){setCalMonth(11);setCalYear(y=>y-1);}else{setCalMonth(m=>m-1);}
+  }
+  function calNext(){
+    if(calMonth===11){setCalMonth(0);setCalYear(y=>y+1);}else{setCalMonth(m=>m+1);}
+  }
+  function shiftSelectedDay(delta){
+    const d=new Date(selectedDay+"T00:00:00");
+    d.setDate(d.getDate()+delta);
+    setSelectedDay(d.toISOString().slice(0,10));
+  }
+  const selectedDayLabel=(()=>{
+    const d=new Date(selectedDay+"T00:00:00");
+    const wd=WEEKDAY_FULL[lang][d.getDay()];
+    return`${wd}, ${d.getDate()} ${MONTH_NAMES[lang][d.getMonth()]}`;
+  })();
+  const weeksInMonth=(()=>{
+    const now=new Date();
+    const daysInMonth=new Date(now.getFullYear(),now.getMonth()+1,0).getDate();
+    const chunkSize=Math.ceil(daysInMonth/4);
+    const weeks=[{idx:1,total:0},{idx:2,total:0},{idx:3,total:0},{idx:4,total:0}];
+    for(let d=1;d<=daysInMonth;d++){
+      const dateKey=`${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,"0")}-${String(d).padStart(2,"0")}`;
+      const weekIdx=Math.min(3,Math.floor((d-1)/chunkSize));
+      weeks[weekIdx].total+=callLog[dateKey]||0;
+    }
+    return weeks;
+  })();
+  const egC=clients.filter(c=>c.nat==="eg").length;
+  const intlC=clients.filter(c=>c.nat==="intl").length;
+  const contactedC=clients.filter(c=>c.called).length;
+  const notC=clients.filter(c=>!c.called).length;
+
+  const filtered=clients.filter(c=>{
+    const q=search.toLowerCase();
+    const match=c.name.toLowerCase().includes(q)||c.phone.includes(q);
+    if(!match)return false;
+    if(filter==="eg")return c.nat==="eg";
+    if(filter==="intl")return c.nat==="intl";
+    if(filter==="contacted")return c.called;
+    if(filter==="not")return!c.called;
+    return true;
+  });
+  const filteredSecond=secondCall.filter(c=>{
+    const q=search.toLowerCase();
+    return c.name.toLowerCase().includes(q)||c.phone.includes(q);
+  });
+
+  function markCalled(id,phone){
+    setClients(cs=>cs.map(c=>c.id===id?{...c,called:true}:c));
+    setCallLog(l=>({...l,[today]:(l[today]||0)+1}));
+    window.open(`tel:${phone}`);
+  }
+  function delClient(id){setClients(cs=>cs.filter(c=>c.id!==id));}
+  function delAll(){if(window.confirm(t.deleteAllConfirm))setClients([]);}
+  function openComment(client){setCommentData({id:client.id,text:client.note||""});setModal("comment");}
+  function saveComment(){
+    const{id,text}=commentData;
+    setClients(cs=>cs.map(c=>c.id===id?{...c,inSecond:true,note:text}:c));
+    const cl=clients.find(c=>c.id===id);
+    if(cl){
+      const up={...cl,inSecond:true,note:text};
+      setSecondCall(s=>s.find(x=>x.id===id)?s.map(x=>x.id===id?up:x):[...s,up]);
+    }
+    closeModal();
+  }
+  function removeFromSecond(id){
+    setSecondCall(s=>s.filter(c=>c.id!==id));
+    setClients(cs=>cs.map(c=>c.id===id?{...c,inSecond:false}:c));
+  }
+  function updateClientNat(id,nat,country){
+    setClients(cs=>cs.map(c=>{
+      if(c.id!==id)return c;
+      if(nat==="intl"){
+        const auto=country!==undefined&&country!==""?country:detectCountry(c.phone);
+        return{...c,nat,country:auto};
+      }
+      return{...c,nat,country:""};
+    }));
+  }
+  function addSingle(){
+    if(!singleForm.name.trim()||!singleForm.phone.trim())return;
+    const country=singleForm.nat==="intl"?(singleForm.country||detectCountry(singleForm.phone)):"";
+    setClients(cs=>[...cs,{...singleForm,country,id:uid(),called:false,inSecond:false,note:""}]);
+    setSingleForm({name:"",phone:"",nat:"eg",country:""});closeModal();
+  }
+  function importMulti(){
+    const names=mNames.split("\n").map(s=>s.trim()).filter(Boolean);
+    const phones=mPhones.split("\n").map(s=>s.trim()).filter(Boolean);
+    if(names.length!==phones.length){setMErr(t.mismatchErr);return;}
+    setClients(cs=>[...cs,...names.map((name,i)=>{
+      const phone=phones[i];
+      const country=detectCountry(phone);
+      const nat=country==="Egypt"||!country?"eg":"intl";
+      return{id:uid(),name,phone,nat,country:nat==="intl"?country:"",called:false,inSecond:false,note:""};
+    })]);
+    setMNames("");setMPhones("");setMErr("");closeModal();
+  }
+  function addManualSecond(){
+    if(!sForm.name.trim())return;
+    setSecondCall(s=>[...s,{id:uid(),name:sForm.name,phone:sForm.phone,nat:"eg",called:false,inSecond:true,note:sForm.note}]);
+    setSForm({name:"",phone:"",note:""});closeModal();
+  }
+
+  function campAudienceList(){
+    if(campAudience==="eg")return clients.filter(c=>c.nat==="eg");
+    if(campAudience==="intl")return clients.filter(c=>c.nat==="intl");
+    return clients;
+  }
+  function startCampaign(){
+    const list=campAudienceList();
+    if(list.length===0)return;
+    setCampQueue({list,idx:0});
+  }
+  function openNextChat(){
+    if(!campQueue)return;
+    const client=campQueue.list[campQueue.idx];
+    const text=encodeURIComponent(campMsg);
+    window.open(`https://wa.me/${client.phone.replace(/\D/g,"")}?text=${text}`,"_blank");
+    if(campQueue.idx+1>=campQueue.list.length){
+      setCampQueue(q=>({...q,idx:q.idx+1}));
+    }else{
+      setCampQueue(q=>({...q,idx:q.idx+1}));
+    }
+  }
+  function handleImagePick(e){
+    const file=e.target.files[0];
+    if(!file)return;
+    const reader=new FileReader();
+    reader.onload=()=>setCampImg(reader.result);
+    reader.readAsDataURL(file);
+  }
+
+  /* ── palette — warm, editorial ── */
+  const P={
+    bg:        dark?"#15130F":"#FAF8F4",
+    surface:   dark?"#1E1C17":"#FFFFFF",
+    surface2:  dark?"#262420":"#F4F1EA",
+    border:    dark?"rgba(255,255,255,0.08)":"rgba(20,16,10,0.09)",
+    text:      dark?"#F2EFE9":"#1A1712",
+    textSub:   dark?"#9B9387":"#7A7264",
+    accent:    dark?"#D8B26A":"#9C6B3E",
+    accentSoft:dark?"rgba(216,178,106,0.16)":"rgba(156,107,62,0.09)",
+    green:     dark?"#8FBF8A":"#3F7A4A",
+    greenSoft: dark?"rgba(143,191,138,0.16)":"rgba(63,122,74,0.1)",
+    red:       dark?"#D98C7E":"#A8442F",
+    redSoft:   dark?"rgba(217,140,126,0.16)":"rgba(168,68,47,0.08)",
+    overlay:   dark?"rgba(0,0,0,0.7)":"rgba(20,16,10,0.45)",
+    navBg:     dark?"rgba(21,19,15,0.94)":"rgba(250,248,244,0.94)",
+  };
+
+  const app={
+    width:"100%",height:"100%",background:P.bg,display:"flex",
+    flexDirection:"column",direction:rtl?"rtl":"ltr",color:P.text,
+    fontFamily:"'Inter',sans-serif",position:"relative",overflow:"hidden",
+  };
+  const scrollArea={flex:1,overflowY:"auto",overflowX:"hidden",paddingBottom:96,WebkitOverflowScrolling:"touch"};
+
+  const headerWrap={background:P.bg,padding:"22px 22px 14px",position:"sticky",top:0,zIndex:50};
+  const brandRow={display:"flex",alignItems:"flex-end",justifyContent:"space-between",marginBottom:(tab==="clients"||tab==="second")?16:4};
+  const brandTitle={...FRAUNCES,fontSize:27,fontWeight:600,color:P.text,letterSpacing:-0.5,lineHeight:1};
+  const brandSub={fontSize:10.5,color:P.textSub,marginTop:6,textTransform:"uppercase",letterSpacing:1.6,fontWeight:600};
+  const gearBtn={background:"none",border:`1px solid ${P.border}`,borderRadius:"50%",width:38,height:38,display:"flex",alignItems:"center",justifyContent:"center",cursor:"pointer",transition:"all 0.25s",flexShrink:0};
+  const rule={height:1,background:P.border,marginTop:16};
+  const searchWrap={display:"flex",alignItems:"center",gap:10,borderBottom:`1.5px solid ${P.text}`,padding:"4px 2px 10px"};
+  const searchInput={flex:1,background:"none",border:"none",outline:"none",fontSize:14.5,color:P.text,fontFamily:"'Inter',sans-serif",letterSpacing:0.2};
+
+  const navWrap={position:"fixed",bottom:0,left:0,right:0,zIndex:100,background:P.navBg,backdropFilter:"blur(20px)",WebkitBackdropFilter:"blur(20px)",borderTop:`1px solid ${P.border}`,display:"flex",paddingBottom:"env(safe-area-inset-bottom,0px)"};
+  const navBtn={flex:1,display:"flex",flexDirection:"column",alignItems:"center",gap:5,padding:"14px 0 10px",border:"none",background:"none",cursor:"pointer",position:"relative"};
+
+  const pad={padding:"0 22px"};
+
+  const STATS=[
+    {label:t.total,val:clients.length,onClick:()=>{setTab("clients");setFilter("all");}},
+    {label:t.eg,val:egC,onClick:()=>{setTab("clients");setFilter("eg");}},
+    {label:t.intl,val:intlC,onClick:()=>{setTab("clients");setFilter("intl");}},
+    {label:t.contacted,val:contactedC,onClick:()=>{setTab("clients");setFilter("contacted");}},
+    {label:t.notContacted,val:notC,onClick:()=>{setTab("clients");setFilter("not");}},
+    {label:t.secondCall,val:secondCall.length,onClick:()=>setTab("second")},
+  ];
+  const FILTERS=[
+    {key:"all",label:t.filterAll},{key:"eg",label:t.eg},{key:"intl",label:t.intl},
+    {key:"contacted",label:t.contacted},{key:"not",label:t.notContacted},
+  ];
+
+  const modalOverlay={position:"fixed",inset:0,background:P.overlay,zIndex:200,display:"flex",alignItems:"flex-end",justifyContent:"center"};
+  const modalSheet={background:P.surface,borderRadius:"28px 28px 0 0",padding:"10px 0 0",width:"100%",maxWidth:480,maxHeight:"90vh",overflowY:"auto",direction:rtl?"rtl":"ltr",transform:modalClosing?"translateY(100%)":undefined,transition:modalClosing?"transform 0.22s cubic-bezier(.4,0,1,1)":undefined};
+  const sheetHandle={width:32,height:3,borderRadius:2,background:P.border,margin:"0 auto 22px"};
+  const sheetPad={padding:"0 24px 44px"};
+  const sheetTitle={...FRAUNCES,fontSize:23,fontWeight:600,color:P.text,marginBottom:22};
+  const inputStyle={width:"100%",padding:"13px 2px",background:"none",border:"none",borderBottom:`1.5px solid ${P.border}`,fontSize:14.5,color:P.text,outline:"none",fontFamily:"'Inter',sans-serif",marginBottom:18,transition:"border 0.2s"};
+  const labelStyle={fontSize:10.5,fontWeight:700,color:P.textSub,marginBottom:8,textTransform:"uppercase",letterSpacing:1.4};
+  const selectStyle={...inputStyle,appearance:"none",cursor:"pointer"};
+  const textareaStyle={...inputStyle,minHeight:110,resize:"vertical",border:`1.5px solid ${P.border}`,borderRadius:10,padding:"12px 14px"};
+  const errStyle={background:P.redSoft,color:P.red,fontSize:12.5,padding:"10px 13px",borderRadius:10,marginBottom:16,fontWeight:500};
+  const hintStyle={fontSize:11.5,color:P.textSub,marginBottom:16,lineHeight:1.5};
+  const btnRow={display:"flex",gap:10,marginTop:6};
+  const btn=(type)=>{
+    const base={flex:1,padding:"14px",border:"none",borderRadius:30,fontSize:13.5,fontWeight:600,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",gap:7,transition:"all 0.2s",fontFamily:"'Inter',sans-serif",letterSpacing:0.3,textTransform:"uppercase"};
+    if(type==="primary")return{...base,background:P.text,color:P.bg};
+    if(type==="danger")return{...base,background:P.redSoft,color:P.red};
+    return{...base,background:"none",color:P.textSub,border:`1.5px solid ${P.border}`};
+  };
+  const actionRow={width:"100%",padding:"16px 4px",border:"none",borderBottom:`1px solid ${P.border}`,background:"none",fontSize:14.5,fontWeight:500,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"space-between",gap:12,transition:"all 0.2s",fontFamily:"'Inter',sans-serif",color:P.text};
+
+  const pillBtn=(active)=>({padding:"10px 16px",borderRadius:30,fontSize:12.5,fontWeight:600,border:`1.4px solid ${active?P.text:P.border}`,background:active?P.text:"none",color:active?P.bg:P.textSub,cursor:"pointer",transition:"all 0.2s",fontFamily:"'Inter',sans-serif"});
+
+  return(
+    <div style={app}>
+      {/* HEADER */}
+      <div style={headerWrap}>
+        <div style={brandRow}>
+          <div>
+            <div style={brandTitle}>Client Manager</div>
+            <div style={brandSub}>{t.sub}</div>
+          </div>
+          <button style={gearBtn} onClick={()=>setModal("settings")}>
+            <Icon.gear s={16} c={P.text}/>
+          </button>
+        </div>
+        {(tab==="clients"||tab==="second")&&(
+          <div style={searchWrap} className="page-in">
+            <Icon.search s={14} c={P.textSub}/>
+            <input style={searchInput} value={search} onChange={e=>setSearch(e.target.value)} placeholder={t.search}/>
+            {search&&<button style={{background:"none",border:"none",cursor:"pointer",padding:0,display:"flex"}} onClick={()=>setSearch("")}><Icon.x s={14} c={P.textSub}/></button>}
+          </div>
+        )}
+        {tab==="home"&&<div style={rule}/>}
+      </div>
+
+      {/* SCROLL AREA */}
+      <div style={scrollArea}>
+
+        {/* ── HOME ── */}
+        {tab==="home"&&(
+          <div style={pad} className="page-in" key="home">
+            <div style={{marginTop:18,marginBottom:8}}>
+              {STATS.map((s,i)=>(
+                <button key={s.label} onClick={s.onClick} className="card-in" style={{
+                  width:"100%",background:"none",border:"none",borderBottom:`1px solid ${P.border}`,
+                  padding:"18px 0",display:"flex",alignItems:"center",justifyContent:"space-between",
+                  cursor:"pointer",animationDelay:`${i*0.045}s`,textAlign:rtl?"right":"left",
+                }}>
+                  <div>
+                    <div style={{fontSize:10.5,fontWeight:700,color:P.textSub,textTransform:"uppercase",letterSpacing:1.4,marginBottom:6}}>{s.label}</div>
+                    <div key={s.val} className="num-in" style={{...FRAUNCES,fontSize:38,fontWeight:500,color:P.text,letterSpacing:-1}}>{s.val}</div>
+                  </div>
+                  <div style={{width:34,height:34,borderRadius:"50%",border:`1px solid ${P.border}`,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}>
+                    <Icon.arrowRight s={13} c={P.textSub}/>
+                  </div>
+                </button>
+              ))}
+            </div>
+
+            <div style={{margin:"30px 0 18px",fontSize:10.5,fontWeight:700,color:P.textSub,textTransform:"uppercase",letterSpacing:1.6}}>{t.actions}</div>
+
+            <button style={actionRow} onClick={()=>setModal("addSingle")}>
+              <span style={{display:"flex",alignItems:"center",gap:14}}><Icon.plus s={16} c={P.accent}/>{t.addClient}</span>
+              <Icon.arrowRight s={13} c={P.textSub}/>
+            </button>
+            <button style={actionRow} onClick={()=>setModal("addMulti")}>
+              <span style={{display:"flex",alignItems:"center",gap:14}}><Icon.layers s={15} c={P.accent}/>{t.addMultiple}</span>
+              <Icon.arrowRight s={13} c={P.textSub}/>
+            </button>
+            <button style={actionRow} onClick={()=>setModal("campaign")}>
+              <span style={{display:"flex",alignItems:"center",gap:14}}><Icon.megaphone s={15} c={P.accent}/>{t.campaign}</span>
+              <Icon.arrowRight s={13} c={P.textSub}/>
+            </button>
+            <button style={{...actionRow,color:P.red}} onClick={delAll}>
+              <span style={{display:"flex",alignItems:"center",gap:14}}><Icon.trash s={14} c={P.red}/>{t.deleteAll}</span>
+            </button>
+          </div>
+        )}
+
+        {/* ── CLIENTS ── */}
+        {tab==="clients"&&(
+          <div style={pad} className="page-in" key="clients">
+            <div style={{display:"flex",gap:8,overflowX:"auto",paddingBottom:6,marginBottom:18,marginTop:2,scrollbarWidth:"none"}}>
+              {FILTERS.map(f=>(
+                <button key={f.key} onClick={()=>setFilter(f.key)} style={pillBtn(filter===f.key)}>{f.label}</button>
+              ))}
+            </div>
+
+            {filtered.length===0?(
+              <div style={{textAlign:"center",padding:"70px 20px"}}>
+                <div style={{...FRAUNCES,fontSize:22,color:P.text,marginBottom:8}}>{t.noClients}</div>
+                <div style={{fontSize:13,color:P.textSub}}>{t.noClientsSub}</div>
+              </div>
+            ):filtered.map((c,i)=>(
+              <ClientCard key={c.id} c={c} t={t} P={P} rtl={rtl} i={i}
+                onCall={()=>markCalled(c.id,c.phone)}
+                onWA={()=>window.open(`https://wa.me/${c.phone.replace(/\D/g,"")}`)}
+                onSC={()=>openComment(c)}
+                onDel={()=>{if(window.confirm(t.delClientConfirm))delClient(c.id);}}
+                onNatChange={(nat,country)=>updateClientNat(c.id,nat,country)}
+              />
+            ))}
+          </div>
+        )}
+
+        {/* ── SECOND CALL ── */}
+        {tab==="second"&&(
+          <div style={pad} className="page-in" key="second">
+            <button style={{...actionRow,marginBottom:6,paddingTop:2}} onClick={()=>setModal("addSecond")}>
+              <span style={{display:"flex",alignItems:"center",gap:14}}><Icon.plus s={16} c={P.accent}/>{t.addSecond}</span>
+              <Icon.arrowRight s={13} c={P.textSub}/>
+            </button>
+            {filteredSecond.length===0?(
+              <div style={{textAlign:"center",padding:"70px 20px"}}>
+                <div style={{...FRAUNCES,fontSize:22,color:P.text,marginBottom:8}}>{t.noSecond}</div>
+                <div style={{fontSize:13,color:P.textSub}}>{t.noSecondSub}</div>
+              </div>
+            ):filteredSecond.map((c,i)=>(
+              <SecondCard key={c.id} c={c} t={t} P={P} rtl={rtl} i={i}
+                onCall={()=>window.open(`tel:${c.phone}`)}
+                onWA={()=>window.open(`https://wa.me/${c.phone.replace(/\D/g,"")}`)}
+                onRemove={()=>removeFromSecond(c.id)}
+              />
+            ))}
+          </div>
+        )}
+
+        {/* ── STATS ── */}
+        {tab==="stats"&&(
+          <div style={pad} className="page-in" key="stats">
+            <div style={{marginTop:6}}>
+              {[[t.callsToday,callsToday],[t.callsYest,callsYest],[t.callsWeek,callsWeek],[t.callsMonth,callsMonth]].map(([label,val],i)=>(
+                <div key={label} className="card-in" style={{display:"flex",justifyContent:"space-between",alignItems:"baseline",padding:"18px 0",borderBottom:`1px solid ${P.border}`,animationDelay:`${i*0.05}s`}}>
+                  <div style={{fontSize:13,color:P.textSub,fontWeight:500,letterSpacing:0.2}}>{label}</div>
+                  <div style={{...FRAUNCES,fontSize:32,fontWeight:500,color:P.text}}>{val}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* weekly breakdown */}
+            <div style={{margin:"30px 0 14px",fontSize:10.5,fontWeight:700,color:P.textSub,textTransform:"uppercase",letterSpacing:1.6}}>{t.weeklyBreakdown}</div>
+            <div style={{display:"flex",flexDirection:"column",gap:8,marginBottom:8}}>
+              {weeksInMonth.map((w,i)=>(
+                <div key={w.idx} className="card-in" style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"13px 16px",background:P.surface,border:`1px solid ${P.border}`,borderRadius:14,animationDelay:`${i*0.04}s`}}>
+                  <div style={{fontSize:13,color:P.text,fontWeight:500}}>{t.week} {w.idx}</div>
+                  <div style={{...FRAUNCES,fontSize:22,fontWeight:600,color:P.accent}}>{w.total}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* selected day detail with prev/next */}
+            <div style={{margin:"30px 0 14px",fontSize:10.5,fontWeight:700,color:P.textSub,textTransform:"uppercase",letterSpacing:1.6}}>{t.dayDetail}</div>
+            <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",background:P.surface,border:`1px solid ${P.border}`,borderRadius:16,padding:"14px 16px",marginBottom:20}}>
+              <button onClick={()=>shiftSelectedDay(-1)} style={{width:32,height:32,borderRadius:"50%",border:`1px solid ${P.border}`,background:"none",display:"flex",alignItems:"center",justifyContent:"center",cursor:"pointer",flexShrink:0}}>
+                <Icon.chevron s={14} c={P.textSub} style={{transform:rtl?"rotate(-90deg)":"rotate(90deg)"}}/>
+              </button>
+              <div style={{textAlign:"center"}}>
+                <div style={{fontSize:11.5,color:P.textSub,marginBottom:4}}>{selectedDayLabel}</div>
+                <div style={{...FRAUNCES,fontSize:30,fontWeight:600,color:P.accent}}>{callLog[selectedDay]||0}</div>
+              </div>
+              <button onClick={()=>shiftSelectedDay(1)} style={{width:32,height:32,borderRadius:"50%",border:`1px solid ${P.border}`,background:"none",display:"flex",alignItems:"center",justifyContent:"center",cursor:"pointer",flexShrink:0}}>
+                <Icon.chevron s={14} c={P.textSub} style={{transform:rtl?"rotate(90deg)":"rotate(-90deg)"}}/>
+              </button>
+            </div>
+
+            {/* calendar grid */}
+            <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",margin:"30px 0 14px"}}>
+              <div style={{fontSize:10.5,fontWeight:700,color:P.textSub,textTransform:"uppercase",letterSpacing:1.6}}>
+                {t.calendarTitle} · {MONTH_NAMES[lang][calMonth]} {calYear}
+              </div>
+              <div style={{display:"flex",gap:6}}>
+                <button onClick={calPrev} style={{width:28,height:28,borderRadius:"50%",border:`1px solid ${P.border}`,background:"none",display:"flex",alignItems:"center",justifyContent:"center",cursor:"pointer"}}>
+                  <Icon.chevron s={13} c={P.textSub} style={{transform:"rotate(90deg)"}}/>
+                </button>
+                <button onClick={calNext} style={{width:28,height:28,borderRadius:"50%",border:`1px solid ${P.border}`,background:"none",display:"flex",alignItems:"center",justifyContent:"center",cursor:"pointer"}}>
+                  <Icon.chevron s={13} c={P.textSub} style={{transform:"rotate(-90deg)"}}/>
+                </button>
+              </div>
+            </div>
+            <div style={{background:P.surface,border:`1px solid ${P.border}`,borderRadius:16,padding:"14px 10px",marginBottom:20}}>
+              <div style={{display:"grid",gridTemplateColumns:"repeat(7,1fr)",gap:4,marginBottom:8}}>
+                {WEEKDAY_SHORT[lang].map((d,i)=>(
+                  <div key={i} style={{textAlign:"center",fontSize:10,fontWeight:700,color:P.textSub,padding:"2px 0"}}>{d}</div>
+                ))}
+              </div>
+              {monthGrid.map((week,wi)=>(
+                <div key={wi} style={{display:"grid",gridTemplateColumns:"repeat(7,1fr)",gap:4,marginBottom:4}}>
+                  {week.map((cell,ci)=>{
+                    if(!cell)return<div key={ci}/>;
+                    const count=callLog[cell.dateKey]||0;
+                    const isToday=isCurrentCalMonth&&cell.dateKey===today;
+                    const isSelected=cell.dateKey===selectedDay;
+                    return(
+                      <div key={ci} onClick={()=>setSelectedDay(cell.dateKey)} style={{
+                        textAlign:"center",padding:"6px 0",borderRadius:10,cursor:"pointer",
+                        background:isSelected?P.accent:(count>0?P.accentSoft:"transparent"),
+                        border:isToday&&!isSelected?`1.4px solid ${P.accent}`:"1.4px solid transparent",
+                        transition:"all 0.15s",
+                      }}>
+                        <div style={{fontSize:10.5,color:isSelected?P.bg:P.textSub,marginBottom:2}}>{cell.day}</div>
+                        <div style={{...FRAUNCES,fontSize:13,fontWeight:600,color:isSelected?P.bg:(count>0?P.accent:P.border)}}>{count||"–"}</div>
+                      </div>
+                    );
+                  })}
+                </div>
+              ))}
+            </div>
+
+            {Object.keys(monthHistory).length>0&&<>
+              <div style={{margin:"30px 0 6px",fontSize:10.5,fontWeight:700,color:P.textSub,textTransform:"uppercase",letterSpacing:1.6}}>{t.prevMonths}</div>
+              {Object.entries(monthHistory).sort((a,b)=>b[0].localeCompare(a[0])).map(([m,cnt])=>(
+                <div key={m} style={{display:"flex",justifyContent:"space-between",alignItems:"baseline",padding:"14px 0",borderBottom:`1px solid ${P.border}`}}>
+                  <div style={{fontSize:13,color:P.textSub}}>{m}</div>
+                  <div style={{...FRAUNCES,fontSize:20,color:P.text}}>{cnt}</div>
+                </div>
+              ))}
+            </>}
+          </div>
+        )}
+      </div>
+
+      {/* BOTTOM NAV */}
+      <div style={navWrap}>
+        {[
+          {key:"home",icon:Icon.home,label:t.tab_home},
+          {key:"clients",icon:Icon.users,label:t.tab_clients},
+          {key:"second",icon:Icon.phone,label:t.tab_second},
+          {key:"stats",icon:Icon.bar,label:t.tab_stats},
+        ].map(n=>{
+          const active=tab===n.key;
+          return(
+            <button key={n.key} style={navBtn} onClick={()=>setTab(n.key)}>
+              <n.icon s={19} c={active?P.text:P.textSub}/>
+              <span style={{fontSize:9.5,fontWeight:active?700:500,color:active?P.text:P.textSub,letterSpacing:0.3,transition:"color 0.2s"}}>{n.label}</span>
+              <div style={{position:"absolute",bottom:0,left:"50%",height:2,width:active?20:0,background:P.text,borderRadius:1,transform:"translateX(-50%)",transition:"width 0.28s cubic-bezier(.22,1,.36,1)"}}/>
+            </button>
+          );
+        })}
+      </div>
+
+      {/* ════ MODALS ════ */}
+      {modal==="settings"&&(
+        <div style={modalOverlay} className="ov-in" onClick={closeModal}>
+          <div style={modalSheet} className={modalClosing?"":"sheet-in"} onClick={e=>e.stopPropagation()}>
+            <div style={sheetHandle}/>
+            <div style={sheetPad}>
+              <div style={sheetTitle}>{t.settings}</div>
+              <div style={{marginBottom:22}}>
+                <div style={labelStyle}>{t.lang}</div>
+                <div style={{display:"flex",gap:8}}>
+                  {["en","ar"].map(l=>(
+                    <button key={l} onClick={()=>setLang(l)} style={{flex:1,padding:"12px",border:`1.5px solid ${lang===l?P.text:P.border}`,borderRadius:30,background:lang===l?P.text:"none",color:lang===l?P.bg:P.textSub,fontSize:13,fontWeight:600,cursor:"pointer",fontFamily:"'Inter',sans-serif",transition:"all 0.2s"}}>{l==="en"?"English":"عربي"}</button>
+                  ))}
+                </div>
+              </div>
+              <div style={{marginBottom:28}}>
+                <div style={labelStyle}>{t.theme}</div>
+                <div style={{display:"flex",gap:8}}>
+                  {[["light",t.light],["dark",t.dark]].map(([v,label])=>(
+                    <button key={v} onClick={()=>setTheme(v)} style={{flex:1,padding:"12px",border:`1.5px solid ${theme===v?P.text:P.border}`,borderRadius:30,background:theme===v?P.text:"none",color:theme===v?P.bg:P.textSub,fontSize:13,fontWeight:600,cursor:"pointer",fontFamily:"'Inter',sans-serif",transition:"all 0.2s"}}>{label}</button>
+                  ))}
+                </div>
+              </div>
+              <button style={btn("primary")} onClick={closeModal}>{t.close}</button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {modal==="addSingle"&&(
+        <div style={modalOverlay} className="ov-in" onClick={closeModal}>
+          <div style={modalSheet} className={modalClosing?"":"sheet-in"} onClick={e=>e.stopPropagation()}>
+            <div style={sheetHandle}/>
+            <div style={sheetPad}>
+              <div style={sheetTitle}>{t.addClient}</div>
+              <div style={labelStyle}>{t.nameLabel}</div>
+              <input style={inputStyle} value={singleForm.name} onChange={e=>setSingleForm(f=>({...f,name:e.target.value}))} placeholder={t.nameLabel}/>
+              <div style={labelStyle}>{t.phoneLabel}</div>
+              <input style={inputStyle} value={singleForm.phone} onChange={e=>setSingleForm(f=>({...f,phone:e.target.value}))} placeholder={t.phoneLabel} type="tel"/>
+              <div style={labelStyle}>{t.natLabel}</div>
+              <select style={selectStyle} value={singleForm.nat} onChange={e=>setSingleForm(f=>({...f,nat:e.target.value}))}>
+                <option value="eg">{t.egOpt}</option>
+                <option value="intl">{t.intlOpt}</option>
+              </select>
+              {singleForm.nat==="intl"&&(
+                <div className="expand-in">
+                  <div style={labelStyle}>{t.countryLabel}</div>
+                  <input style={inputStyle} value={singleForm.country} onChange={e=>setSingleForm(f=>({...f,country:e.target.value}))} placeholder={t.countryHint}/>
+                </div>
+              )}
+              <div style={btnRow}>
+                <button style={btn("secondary")} onClick={closeModal}>{t.cancel}</button>
+                <button style={btn("primary")} onClick={addSingle}>{t.save}</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {modal==="addMulti"&&(
+        <div style={modalOverlay} className="ov-in" onClick={closeModal}>
+          <div style={modalSheet} className={modalClosing?"":"sheet-in"} onClick={e=>e.stopPropagation()}>
+            <div style={sheetHandle}/>
+            <div style={sheetPad}>
+              <div style={sheetTitle}>{t.addMultiple}</div>
+              <div style={hintStyle}>{t.importHint}</div>
+              {mErr&&<div style={errStyle}>{mErr}</div>}
+              <div style={{display:"flex",gap:12}}>
+                <div style={{flex:1}}>
+                  <div style={labelStyle}>{t.pasteNames}</div>
+                  <textarea style={textareaStyle} value={mNames} onChange={e=>setMNames(e.target.value)} placeholder={"Ahmed\nMohamed\nAli"}/>
+                </div>
+                <div style={{flex:1}}>
+                  <div style={labelStyle}>{t.pastePhones}</div>
+                  <textarea style={textareaStyle} value={mPhones} onChange={e=>setMPhones(e.target.value)} placeholder={"010012\n011123\n+97150…"}/>
+                </div>
+              </div>
+              <div style={btnRow}>
+                <button style={btn("secondary")} onClick={()=>{closeModal();setMErr("");}}>{t.cancel}</button>
+                <button style={btn("primary")} onClick={importMulti}>{t.importBtn}</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {modal==="comment"&&(
+        <div style={modalOverlay} className="ov-in" onClick={closeModal}>
+          <div style={modalSheet} className={modalClosing?"":"sheet-in"} onClick={e=>e.stopPropagation()}>
+            <div style={sheetHandle}/>
+            <div style={sheetPad}>
+              <div style={sheetTitle}>{t.sc}</div>
+              <div style={labelStyle}>{t.noteHint}</div>
+              <textarea style={textareaStyle} value={commentData.text} onChange={e=>setCommentData(d=>({...d,text:e.target.value}))} placeholder={t.noteHint}/>
+              <div style={btnRow}>
+                <button style={btn("secondary")} onClick={closeModal}>{t.cancel}</button>
+                <button style={btn("primary")} onClick={saveComment}>{t.save}</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {modal==="addSecond"&&(
+        <div style={modalOverlay} className="ov-in" onClick={closeModal}>
+          <div style={modalSheet} className={modalClosing?"":"sheet-in"} onClick={e=>e.stopPropagation()}>
+            <div style={sheetHandle}/>
+            <div style={sheetPad}>
+              <div style={sheetTitle}>{t.addSecond}</div>
+              <div style={labelStyle}>{t.nameLabel}</div>
+              <input style={inputStyle} value={sForm.name} onChange={e=>setSForm(f=>({...f,name:e.target.value}))} placeholder={t.nameLabel}/>
+              <div style={labelStyle}>{t.phoneLabel}</div>
+              <input style={inputStyle} value={sForm.phone} onChange={e=>setSForm(f=>({...f,phone:e.target.value}))} placeholder={t.phoneLabel} type="tel"/>
+              <div style={labelStyle}>{t.noteHint}</div>
+              <textarea style={textareaStyle} value={sForm.note} onChange={e=>setSForm(f=>({...f,note:e.target.value}))} placeholder={t.noteHint}/>
+              <div style={btnRow}>
+                <button style={btn("secondary")} onClick={closeModal}>{t.cancel}</button>
+                <button style={btn("primary")} onClick={addManualSecond}>{t.save}</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* CAMPAIGN MODAL */}
+      {modal==="campaign"&&!campQueue&&(
+        <div style={modalOverlay} className="ov-in" onClick={closeModal}>
+          <div style={modalSheet} className={modalClosing?"":"sheet-in"} onClick={e=>e.stopPropagation()}>
+            <div style={sheetHandle}/>
+            <div style={sheetPad}>
+              <div style={sheetTitle}>{t.campaign}</div>
+              <div style={hintStyle}>{t.campaignIntro}</div>
+
+              <div style={{marginBottom:18}}>
+                <div style={labelStyle}>{t.audience}</div>
+                <div style={{display:"flex",gap:8,flexWrap:"wrap"}}>
+                  {[["all",t.audAll],["eg",t.audEg],["intl",t.audIntl]].map(([v,label])=>(
+                    <button key={v} onClick={()=>setCampAudience(v)} style={pillBtn(campAudience===v)}>{label}</button>
+                  ))}
+                </div>
+                <div style={{fontSize:11.5,color:P.textSub,marginTop:8}}>{campAudienceList().length} {t.recipient}{campAudienceList().length!==1?"s":""}</div>
+              </div>
+
+              <div style={labelStyle}>{t.message}</div>
+              <textarea style={textareaStyle} value={campMsg} onChange={e=>setCampMsg(e.target.value)} placeholder={t.messageHint}/>
+
+              <div style={{marginBottom:18}}>
+                <div style={labelStyle}>{t.imageOpt}</div>
+                {campImg?(
+                  <div style={{position:"relative",display:"inline-block"}}>
+                    <img src={campImg} style={{width:90,height:90,objectFit:"cover",borderRadius:12,border:`1px solid ${P.border}`}}/>
+                    <button onClick={()=>setCampImg(null)} style={{position:"absolute",top:-8,right:-8,width:24,height:24,borderRadius:"50%",background:P.red,border:"none",display:"flex",alignItems:"center",justifyContent:"center",cursor:"pointer"}}>
+                      <Icon.x s={12} c="#fff"/>
+                    </button>
+                  </div>
+                ):(
+                  <label style={{display:"flex",alignItems:"center",gap:8,padding:"11px 16px",border:`1.4px dashed ${P.border}`,borderRadius:12,cursor:"pointer",fontSize:13,color:P.textSub,width:"fit-content"}}>
+                    <Icon.image s={15} c={P.textSub}/>{t.addImage}
+                    <input type="file" accept="image/*" onChange={handleImagePick} style={{display:"none"}}/>
+                  </label>
+                )}
+                <div style={{fontSize:11,color:P.textSub,marginTop:8,lineHeight:1.5}}>
+                  ⚠️ WhatsApp web links can't attach images automatically — save this image and attach it manually in the chat if needed.
+                </div>
+              </div>
+
+              <div style={{marginBottom:22}}>
+                <div style={labelStyle}>{t.delay}</div>
+                <div style={{display:"flex",gap:10}}>
+                  <input type="number" min="1" style={{...inputStyle,marginBottom:0,width:70,textAlign:"center"}} value={campDelay} onChange={e=>setCampDelay(e.target.value)}/>
+                  <div style={{display:"flex",gap:8,flex:1}}>
+                    {[["seconds",t.seconds],["minutes",t.minutes]].map(([v,label])=>(
+                      <button key={v} onClick={()=>setCampDelayUnit(v)} style={{...pillBtn(campDelayUnit===v),flex:1}}>{label}</button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div style={btnRow}>
+                <button style={btn("secondary")} onClick={closeModal}>{t.cancel}</button>
+                <button style={btn("primary")} onClick={startCampaign} disabled={!campMsg.trim()||campAudienceList().length===0}>{t.startCampaign}</button>
+              </div>
+              {campAudienceList().length===0&&<div style={{...errStyle,marginTop:14}}>{t.noAudience}</div>}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* CAMPAIGN QUEUE RUNNER */}
+      {campQueue&&(
+        <div style={modalOverlay} className="ov-in">
+          <div style={modalSheet} className="sheet-in">
+            <div style={sheetHandle}/>
+            <div style={sheetPad}>
+              <div style={sheetTitle}>{t.campaignQueue}</div>
+              {campQueue.idx<campQueue.list.length?(
+                <>
+                  <div style={{fontSize:12,color:P.textSub,marginBottom:6,textTransform:"uppercase",letterSpacing:1,fontWeight:700}}>
+                    {campQueue.idx+1} {t.campaignProgress} {campQueue.list.length}
+                  </div>
+                  <div style={{...FRAUNCES,fontSize:24,color:P.text,marginBottom:4}}>{campQueue.list[campQueue.idx].name}</div>
+                  <div style={{fontSize:13,color:P.textSub,marginBottom:24}}>{campQueue.list[campQueue.idx].phone}</div>
+                  <button style={btn("primary")} onClick={openNextChat}>
+                    <Icon.wa s={15} c={P.bg}/> {t.sendNext}
+                  </button>
+                  <button style={{...btn("secondary"),marginTop:10}} onClick={()=>{setCampQueue(null);closeModal();}}>{t.finishCampaign}</button>
+                </>
+              ):(
+                <>
+                  <div style={{...FRAUNCES,fontSize:22,color:P.text,marginBottom:20,textAlign:"center"}}>{t.campaignDone}</div>
+                  <button style={btn("primary")} onClick={()=>{setCampQueue(null);closeModal();}}>{t.close}</button>
+                </>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* ── Client Card — editorial, always expanded, collapsible via chevron ── */
+function ClientCard({c,t,P,rtl,i,onCall,onWA,onSC,onDel,onNatChange}){
+  const[open,setOpen]=useState(true);
+  const[editingNat,setEditingNat]=useState(false);
+  return(
+    <div className="card-in" style={{borderBottom:`1px solid ${P.border}`,padding:"16px 0",animationDelay:`${i*0.03}s`}}>
+      <div style={{display:"flex",alignItems:"center",gap:14}}>
+        <div style={{width:3,height:34,borderRadius:2,flexShrink:0,background:c.called?P.green:P.border,transition:"background 0.25s"}}/>
+        <div style={{flex:1,minWidth:0,cursor:"pointer"}} onClick={()=>setEditingNat(false)}>
+          <div style={{...FRAUNCES,fontSize:17,fontWeight:500,color:P.text,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{c.name}</div>
+          <div style={{fontSize:12,color:P.textSub,marginTop:2,letterSpacing:0.2,display:"flex",alignItems:"center",gap:6,flexWrap:"wrap"}}>
+            <span>{c.phone}</span>
+            <span>·</span>
+            <span onClick={(e)=>{e.stopPropagation();setEditingNat(v=>!v);}} style={{textDecoration:"underline",textDecorationStyle:"dotted",cursor:"pointer"}}>
+              {c.nat==="eg"?t.egOpt:(c.country?`${t.intlOpt} · ${c.country}`:t.intlOpt)}
+            </span>
+            {c.called&&(
+              <span className="check-in" style={{display:"flex",alignItems:"center",gap:3,color:P.green,fontWeight:700}}>
+                · <Icon.check s={11} c={P.green}/> {t.called}
+              </span>
+            )}
+          </div>
+        </div>
+        <button onClick={()=>setOpen(o=>!o)} style={{background:"none",border:"none",cursor:"pointer",padding:6,flexShrink:0,transform:open?"rotate(180deg)":"rotate(0deg)",transition:"transform 0.3s cubic-bezier(.22,1,.36,1)"}}>
+          <Icon.chevron s={15} c={P.textSub}/>
+        </button>
+      </div>
+
+      {editingNat&&(
+        <div className="expand-in" style={{paddingTop:12,paddingInlineStart:17}}>
+          <div style={{display:"flex",gap:8,marginBottom:c.nat==="intl"?10:0}}>
+            <button onClick={()=>onNatChange("eg","")} style={{...pillBtn_(c.nat==="eg",P),flex:1}}>{t.egOpt}</button>
+            <button onClick={()=>onNatChange("intl",c.country)} style={{...pillBtn_(c.nat==="intl",P),flex:1}}>{t.intlOpt}</button>
+          </div>
+          {c.nat==="intl"&&(
+            <input
+              style={{width:"100%",padding:"9px 12px",background:P.surface2,border:`1px solid ${P.border}`,borderRadius:10,fontSize:13,color:P.text,outline:"none",fontFamily:"'Inter',sans-serif"}}
+              defaultValue={c.country} placeholder={t.countryHint}
+              onBlur={e=>onNatChange("intl",e.target.value)}
+            />
+          )}
+        </div>
+      )}
+
+      {open&&(
+        <div className="expand-in" style={{paddingTop:14,paddingInlineStart:17}}>
+          {c.note&&<div style={{fontSize:12.5,color:P.textSub,fontStyle:"italic",marginBottom:12,paddingInlineStart:12,borderInlineStart:`2px solid ${P.accent}`,lineHeight:1.5}}>{c.note}</div>}
+          <div style={{display:"flex",gap:8}}>
+            <CBtn P={P} disabled={c.called} onClick={!c.called?onCall:null} icon={<Icon.phone s={13} c={c.called?P.textSub:P.text}/>} label={t.call}/>
+            <CBtn P={P} onClick={onWA} icon={<Icon.wa s={13} c={P.text}/>} label="WA"/>
+            <CBtn P={P} onClick={onSC} icon={<Icon.repeat s={12} c={P.text}/>} label={t.sc}/>
+            <CBtn P={P} danger onClick={onDel} icon={<Icon.trash s={12} c={P.red}/>} label=""/>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+function pillBtn_(active,P){
+  return{padding:"7px 14px",borderRadius:30,fontSize:11.5,fontWeight:600,border:`1.3px solid ${active?P.text:P.border}`,background:active?P.text:"none",color:active?P.bg:P.textSub,cursor:"pointer",transition:"all 0.2s",fontFamily:"'Inter',sans-serif"};
+}
+
+function SecondCard({c,t,P,rtl,i,onCall,onWA,onRemove}){
+  return(
+    <div className="card-in" style={{borderBottom:`1px solid ${P.border}`,padding:"16px 0",animationDelay:`${i*0.03}s`}}>
+      <div style={{display:"flex",alignItems:"center",gap:14,marginBottom:c.note?10:14}}>
+        <div style={{width:3,height:34,borderRadius:2,background:P.accent,flexShrink:0}}/>
+        <div style={{flex:1,minWidth:0}}>
+          <div style={{...FRAUNCES,fontSize:17,fontWeight:500,color:P.text,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{c.name}</div>
+          <div style={{fontSize:12,color:P.textSub,marginTop:2}}>{c.phone}</div>
+        </div>
+        <button onClick={onRemove} style={{background:"none",border:"none",cursor:"pointer",padding:6,flexShrink:0}}>
+          <Icon.x s={15} c={P.textSub}/>
+        </button>
+      </div>
+      {c.note&&<div style={{fontSize:12.5,color:P.textSub,fontStyle:"italic",marginBottom:12,paddingInlineStart:17,borderInlineStart:`2px solid ${P.accent}`,lineHeight:1.5,marginInlineStart:17}}>{c.note}</div>}
+      <div style={{display:"flex",gap:8,paddingInlineStart:17}}>
+        <CBtn P={P} onClick={onCall} icon={<Icon.phone s={13} c={P.text}/>} label={t.call}/>
+        <CBtn P={P} onClick={onWA} icon={<Icon.wa s={13} c={P.text}/>} label="WA"/>
+      </div>
+    </div>
+  );
+}
+
+function CBtn({P,onClick,icon,label,disabled,danger}){
+  const[pressed,setPressed]=useState(false);
+  return(
+    <button
+      onMouseDown={()=>onClick&&setPressed(true)} onMouseUp={()=>setPressed(false)} onMouseLeave={()=>setPressed(false)}
+      onTouchStart={()=>onClick&&setPressed(true)} onTouchEnd={()=>setPressed(false)}
+      onClick={onClick||undefined}
+      style={{
+        padding:label?"8px 14px":"8px 10px",border:`1.3px solid ${danger?P.redSoft:P.border}`,borderRadius:30,
+        background:pressed?(danger?P.red:P.text):"none",
+        color:disabled?P.textSub:(pressed?P.bg:P.text),
+        fontSize:11.5,fontWeight:600,cursor:onClick?"pointer":"default",
+        display:"flex",alignItems:"center",justifyContent:"center",gap:6,
+        transition:"all 0.15s",fontFamily:"'Inter',sans-serif",opacity:disabled?0.45:1,letterSpacing:0.2,
+      }}>
+      {icon}{label}
+    </button>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+  </script>
+</body>
+</html>
